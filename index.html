@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <title>Подтверждение почты</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <div class="brand"><div class="brand-icon">✉</div><span>MAIL<span class="accent">CHECK</span></span></div>
+    <section class="panel">
+      <div class="eyebrow"><span class="dot"></span> ЗАЩИТА АККАУНТА</div>
+      <h1>Подтвердите<br><span class="gradient">свою почту</span></h1>
+      <p class="intro">Отправим одноразовый код на ваш адрес электронной почты. Код действует 5 минут.</p>
+
+      <form id="sendForm">
+        <label for="email">Адрес электронной почты</label>
+        <div class="input-wrap"><span class="input-icon">＠</span><input id="email" type="email" placeholder="name@example.com" autocomplete="email" maxlength="254" required></div>
+        <button id="sendButton" type="submit">Получить код <span>→</span></button>
+      </form>
+
+      <form id="verifyForm" class="verify hidden">
+        <div class="separator"><span></span> ВВЕДИТЕ КОД ИЗ ПИСЬМА <span></span></div>
+        <label for="code">Пятизначный код</label>
+        <input id="code" class="code-input" inputmode="numeric" autocomplete="one-time-code" maxlength="5" placeholder="• • • • •" pattern="[0-9]{5}" required>
+        <button id="verifyButton" type="submit" class="secondary">Подтвердить почту <span>✓</span></button>
+      </form>
+
+      <div id="message" class="message hidden" role="status" aria-live="polite"></div>
+      <div class="security"><span>▣</span><p>Код отправляется только на указанную почту. Мы не показываем его на сайте и не просим сообщать его другим людям.</p></div>
+    </section>
+    <footer>Безопасное подтверждение электронной почты</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
