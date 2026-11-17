@@ -8,8 +8,7 @@ const path = require("path");
 const app = express();
 app.disable("x-powered-by");
 app.use(express.json({ limit: "10kb" }));
-app.use(express.static(path.join(__dirname, "public")));
-
+app.use(express.static(__dirname));
 const required = ["SMTP_HOST", "SMTP_USER", "SMTP_PASS", "MAIL_FROM", "OTP_SECRET"];
 for (const key of required) {
   if (!process.env[key]) {
