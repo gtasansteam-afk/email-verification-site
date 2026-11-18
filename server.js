@@ -8,7 +8,7 @@ const app = express();
 app.set("trust proxy", 1);
 app.disable("x-powered-by");
 app.use(express.json({ limit: "10kb" }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
 
 // MAIL_FROM_NAME is optional; everything else here is required.
 const required = ["BREVO_API_KEY", "MAIL_FROM_EMAIL", "OTP_SECRET"];
